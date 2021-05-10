@@ -24,7 +24,7 @@ public class PeliculaDaoImplMemory implements PeliculaDao {
 							.stream()
 							.map(catalogo -> catalogo.getPeliculas())
 							.flatMap(lista -> lista.stream())
-							.collect(Collectors.toCollection(ArrayList::new));
+							.collect(Collectors.toCollection(ArrayList::new));  
 		
 	}
 	
