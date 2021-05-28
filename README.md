@@ -1,7 +1,7 @@
 # Spring
 ## Table of Contents
-1. [springBootMVC](#general-info)
-2. [springCore5](#technologies)
+1. [springBootMVC](#springBootMVC)
+2. [springCore5](#springCore5)
 3. [secured-spring-rest-api](#installation)
 4. [springLearn](#installation)
 5. [Collaboration](#collaboration)
@@ -9,6 +9,21 @@
 ### springBootMVC
 ***
 Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
+
+***
+A list of technologies used within the project:
+* Create of Controladores
+* Repository
+* Create of Controladores
+* Crud , Jpa
+* MVC con thymeleaf
+
+* [Library name](https://example.com): Version 1234
+
+## springCore5
+
+
+
 ### Screenshot
 ![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
 ## Technologies
