@@ -1,6 +1,9 @@
 # Spring
 ![Image text](https://spring.io/images/spring-logo-9146a4d3298760c2e7e49595184e1975.svg)
 
+***
+Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
+
 
 ## Table of Contents
 1. [springBootMVC](#springBootMVC)
@@ -10,9 +13,6 @@
 5. [Collaboration](#collaboration)
 6. [FAQs](#faqs)
 ### springBootMVC
-***
-Write down the general informations of your project. It is worth to always put a project status in the Readme file. This is where you can add it. 
-
 ***
 A list of technologies used within the project:
 * Create of Controladores
@@ -24,16 +24,8 @@ A list of technologies used within the project:
 
 ## springCore5
 
-
-
-### Screenshot
-![Image text](https://www.united-internet.de/fileadmin/user_upload/Brands/Downloads/Logo_IONOS_by.jpg)
 ## Technologies
-***
-A list of technologies used within the project:
-* [Technologie name](https://example.com): Version 12.3 
-* [Technologie name](https://example.com): Version 2.34
-* [Library name](https://example.com): Version 1234
+
 ## Installation
 ***
 A little intro about the installation. 
@@ -71,11 +63,6 @@ Answer of the third question with *italic words*.
 All Spring Boot
 
 
-•	springBootMVC
-	•	Create of Controladores
-	•	Repository
-	•	Crud , Jpa
-	•	MVC con thymeleaf
 
 •	springCore5
 	•	Bean
