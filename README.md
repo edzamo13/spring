@@ -1,11 +1,23 @@
 # spring
-All Spring
+All Spring Boot
 
 
-Spring Core
+•	springBootMVC
+	•	Create of Controladores
+	•	Repository
+	•	Crud , Jpa
+	•	MVC con thymeleaf
 
-1. Introducción a Spring
-2. Contenedor de Inversión de Control 
-3. Ámbito y ciclo de vida de un bean
-4. Configuración basada en anotaciones 
-5. Configuración a través de Java
+•	springCore5
+	•	Bean
+	•	Scand Component
+	•	Autowired
+	•	MVC wwith thymeleaf
+
+•	secured-spring-rest-api
+	•	Authentication Basic
+	•	JWT
+	•	OAuth2
+	
+
+•	springLearn
