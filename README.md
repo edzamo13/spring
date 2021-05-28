@@ -6,14 +6,14 @@ Write down the general informations of your project. It is worth to always put a
 
 
 ## Table of Contents
-1. [springBootMVC](#springBootMVC)
+1. [SpringBootMVC](#springBootMVC)
 2. [springCore5](#springCore5)
 3. [secured-spring-rest-api](#installation)
 4. [springLearn](#installation)
 5. [Collaboration](#collaboration)
 6. [FAQs](#faqs)
 ### springBootMVC
-***
+
 A list of technologies used within the project:
 * Create of Controladores
 * Repository
@@ -21,7 +21,7 @@ A list of technologies used within the project:
 * Crud , Jpa
 * MVC con thymeleaf
 * [Library name](https://example.com): Version 1234
-
+***
 ## springCore5
 
 ## Technologies
