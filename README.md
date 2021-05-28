@@ -11,8 +11,8 @@ Write down the general informations of your project. It is worth to always put a
 3. [Secured-spring-rest-api](#Secured-spring-rest-api)
 4. [SpringLearn](#SpringLearn)
 5. [Installation](#Installation)
-5. [Collaboration](#collaboration)
-6. [FAQs](#faqs)
+6. [Collaboration](#collaboration)
+7. [FAQs](#faqs)
 ***
 ### SpringBootMVC
 A list of examples in Spring boot MVC for example:
@@ -32,7 +32,7 @@ A list of examples in Spring boot MVC for example:
 ***
 ## SpringLearn
 A list of examples in Spring boot MVC for example:
-* 
+* In construction
 * 
 * 
 * 
@@ -45,7 +45,6 @@ A list of examples in Spring boot MVC for example:
 * 
 ***
 ## Installation
-***
 A little intro about the installation. 
 ```
 $ git clone https://example.com
@@ -78,7 +77,3 @@ Answer of the third question with *italic words*.
 | text-align left | text-align center | text-align right |
 
 
-
-
-	
-•	springLearn
