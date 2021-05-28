@@ -6,26 +6,44 @@ Write down the general informations of your project. It is worth to always put a
 
 
 ## Table of Contents
-1. [SpringBootMVC](#springBootMVC)
-2. [springCore5](#springCore5)
-3. [secured-spring-rest-api](#installation)
-4. [springLearn](#installation)
+1. [SpringBootMVC](#SpringBootMVC)
+2. [SpringCore5](#SpringCore5)
+3. [Secured-spring-rest-api](#Secured-spring-rest-api)
+4. [SpringLearn](#SpringLearn)
+5. [Installation](#Installation)
 5. [Collaboration](#collaboration)
 6. [FAQs](#faqs)
-### springBootMVC
-
-A list of technologies used within the project:
+***
+### SpringBootMVC
+A list of examples in Spring boot MVC for example:
 * Create of Controladores
 * Repository
 * Create of Controladores
 * Crud , Jpa
 * MVC con thymeleaf
-* [Library name](https://example.com): Version 1234
+* [Spring boot MVC](https://example.com): Version 1234
 ***
 ## springCore5
-
-## Technologies
-
+A list of examples in Spring boot MVC for example:
+* Bean
+* Scand Component
+* Autowired
+* MVC with thymeleaf
+***
+## SpringLearn
+A list of examples in Spring boot MVC for example:
+* 
+* 
+* 
+* 
+***
+## Secured-spring-rest-api
+A list of examples in Spring boot MVC for example:
+* Authentication Basic
+* JWT
+* OAuth2
+* 
+***
 ## Installation
 ***
 A little intro about the installation. 
@@ -60,19 +78,7 @@ Answer of the third question with *italic words*.
 | text-align left | text-align center | text-align right |
 
 
-All Spring Boot
 
 
-
-•	springCore5
-	•	Bean
-	•	Scand Component
-	•	Autowired
-	•	MVC wwith thymeleaf
-
-•	secured-spring-rest-api
-	•	Authentication Basic
-	•	JWT
-	•	OAuth2
 	
 •	springLearn
