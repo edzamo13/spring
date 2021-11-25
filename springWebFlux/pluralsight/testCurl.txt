@@ -1,0 +1,10 @@
+You can make a test with this command:
+
+for getAll:
+curl -v http://localhost:8080/products/619ec1ebff972b2b788d6d19 
+
+
+for Post with json object:
+
+curl -v -H "Content-Type: application/json" -d "{\"name\":\"Black Tea\",\"price\":1.99}" http://localhost:8080/products 
+
