@@ -1,7 +1,8 @@
-package com.pluralsight.productapiannotation.controller;
+package com.wiredbraincoffee.productapiannotation.controller;
 
-import com.pluralsight.productapiannotation.model.Product;
-import com.pluralsight.productapiannotation.repository.ProductRepository;
+import com.wiredbraincoffee.productapiannotation.model.Product;
+import com.wiredbraincoffee.productapiannotation.model.ProductEvent;
+import com.wiredbraincoffee.productapiannotation.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -10,6 +11,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 import java.time.Duration;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/products")
@@ -37,7 +39,6 @@ public class ProductController {
     @ResponseStatus(HttpStatus.CREATED)
     public Mono<Product> saveProduct(@RequestBody Product product) {
         return repository.save(product);
-        //   .map(s-> ResponseEntity.ok(s));
     }
 
     @PutMapping("{id}")
@@ -56,22 +57,23 @@ public class ProductController {
     @DeleteMapping("{id}")
     public Mono<ResponseEntity<Void>> deleteProduct(@PathVariable(value = "id") String id) {
         return repository.findById(id)
-                .flatMap(existingProduct -> {
-                    return repository.delete(existingProduct)
-                            .then(Mono.just(ResponseEntity.ok().<Void>build()));
-                })
+                .flatMap(existingProduct ->
+                        repository.delete(existingProduct)
+                                .then(Mono.just(ResponseEntity.ok().<Void>build()))
+                )
                 .defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @DeleteMapping
-    public Mono<Void> deleteAllProduct() {
+    public Mono<Void> deleteAllProducts() {
         return repository.deleteAll();
     }
 
     @GetMapping(value = "/events", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
-    public Flux<ProductEvent> getProductEvent() {
+    public Flux<ProductEvent> getProductEvents() {
         return Flux.interval(Duration.ofSeconds(1))
-                .map(val -> new ProductEvent(val, "Product Event"));
+                .map(val ->
+                        new ProductEvent(val, "Product Event")
+                );
     }
-
 }
