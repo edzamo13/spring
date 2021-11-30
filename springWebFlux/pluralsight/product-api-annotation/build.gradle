@@ -26,6 +26,12 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 	testImplementation 'io.projectreactor:reactor-test'
+
+	//test
+
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.13.0'
+	implementation 'io.projectreactor.netty:reactor-netty:1.0.13'
+
 }
 
 test {

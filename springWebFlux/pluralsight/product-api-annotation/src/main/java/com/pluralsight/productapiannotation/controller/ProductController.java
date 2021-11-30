@@ -1,5 +1,6 @@
 package com.pluralsight.productapiannotation.controller;
 
+import com.pluralsight.productapiannotation.client.WebClientApi;
 import com.pluralsight.productapiannotation.model.Product;
 import com.pluralsight.productapiannotation.repository.ProductRepository;
 import org.springframework.http.HttpStatus;
@@ -72,6 +73,15 @@ public class ProductController {
     public Flux<ProductEvent> getProductEvent() {
         return Flux.interval(Duration.ofSeconds(1))
                 .map(val -> new ProductEvent(val, "Product Event"));
+    }
+
+
+    @GetMapping("getTestWebClientProduct" )
+    public Flux<Product> getTestWebClientProduct() {
+        WebClientApi api= new WebClientApi();
+        return api
+                .getAllProduct();
+
     }
 
 }
