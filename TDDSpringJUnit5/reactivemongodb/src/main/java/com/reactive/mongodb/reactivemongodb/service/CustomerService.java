@@ -9,7 +9,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-public class CustomerServiceTemplate {
+public class CustomerService {
 
    @Autowired
   private ReactiveMongoTemplate template;

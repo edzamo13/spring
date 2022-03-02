@@ -1,15 +1,9 @@
 package com.reactive.mongodb.reactivemongodb.controller;
 
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.doReturn;
-import static org.mockito.Mockito.verify;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 import com.reactive.mongodb.reactivemongodb.model.Customer;
-import com.reactive.mongodb.reactivemongodb.service.CustomerServiceTemplate;
+import com.reactive.mongodb.reactivemongodb.service.CustomerService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -24,6 +18,13 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import reactor.core.publisher.Mono;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.verify;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
@@ -33,7 +34,7 @@ class CustomerControllerTest {
   private MockMvc mockMvc;
 
   @MockBean
-  private CustomerServiceTemplate service;
+  private CustomerService service;
 
 
   @Test
@@ -49,6 +50,7 @@ class CustomerControllerTest {
         .andDo(print());
 
     verify(service, Mockito.timeout(1)).findById(any());
+
 
 
   }

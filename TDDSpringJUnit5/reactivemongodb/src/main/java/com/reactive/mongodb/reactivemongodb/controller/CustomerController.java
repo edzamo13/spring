@@ -2,7 +2,7 @@ package com.reactive.mongodb.reactivemongodb.controller;
 
 
 import com.reactive.mongodb.reactivemongodb.model.Customer;
-import com.reactive.mongodb.reactivemongodb.service.CustomerServiceTemplate;
+import com.reactive.mongodb.reactivemongodb.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +19,7 @@ import reactor.core.publisher.Mono;
 public class CustomerController {
 
   @Autowired
-  private CustomerServiceTemplate accountTemplateOperations;
+  private CustomerService accountTemplateOperations;
 
 
   @GetMapping("all")

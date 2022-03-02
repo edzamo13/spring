@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 public interface CustomerRepository extends ReactiveCrudRepository<Customer, String> {
 
   public Customer findByFirstName(String firstName);
+
   public List<Customer> findByLastName(String lastName);
 
 }

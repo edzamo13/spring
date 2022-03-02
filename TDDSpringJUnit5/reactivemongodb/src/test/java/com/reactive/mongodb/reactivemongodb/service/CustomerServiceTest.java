@@ -18,10 +18,10 @@ import static org.mockito.Mockito.doReturn;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
-class CustomerServiceTemplateTest {
+class CustomerServiceTest {
 
     @Autowired
-    private CustomerServiceTemplate serviceTemplate;
+    private CustomerService serviceTemplate;
 
     @MockBean
     private CustomerRepository repository;
