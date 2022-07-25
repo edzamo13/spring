@@ -35,7 +35,7 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) {
-        System.out.println(myBean.hello());
+        System.out.println("this is my first bean: " + myBean.hello());
         myComponent.printSomething();
 
         Function<String, String> function = uppercase();
