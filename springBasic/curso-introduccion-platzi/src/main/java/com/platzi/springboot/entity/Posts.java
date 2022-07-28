@@ -1,7 +1,5 @@
 package com.platzi.springboot.entity;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 
 @Entity
@@ -16,7 +14,6 @@ public class Posts {
 
     @ManyToOne
     @JoinColumn(name = "user_id") //No necesario para el ejemplo del curso pero se puede explicar
-    @JsonBackReference
     private User user;
 
     public Posts() {
