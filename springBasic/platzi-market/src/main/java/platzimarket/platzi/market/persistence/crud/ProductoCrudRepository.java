@@ -1,6 +1,5 @@
 package platzimarket.platzi.market.persistence.crud;
 
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import platzimarket.platzi.market.persistence.entity.Producto;
 
