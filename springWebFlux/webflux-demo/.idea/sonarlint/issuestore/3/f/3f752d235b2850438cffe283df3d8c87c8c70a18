@@ -1,0 +1,10 @@
+
+N
+java:S1172",Remove this unused method parameter "input".(ªëÁ»ùÿÿÿÿ8ò…—˜¥1
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ó…—˜¥1
+>
+java:S3864"!Remove this use of "Stream.peek".(ëÑË•8ô…—˜¥1
+>
+java:S3864"!Remove this use of "Stream.peek".(èŸÜÝ8ô…—˜¥1
+G	java:S106"+Replace this use of System.out by a logger.(ëÑË•8õ…—˜¥1
