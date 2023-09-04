@@ -1,5 +1,6 @@
 package com.ezamora.webfluxdemo.controller;
 
+import com.ezamora.webfluxdemo.dto.MultiplyRequestDto;
 import com.ezamora.webfluxdemo.dto.Response;
 import com.ezamora.webfluxdemo.service.ReactiveMathService;
 
@@ -7,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import reactor.core.publisher.Flux;
@@ -37,4 +40,11 @@ public class ReactiveMatchController {
   public Flux<Response> multiplicationTableStream(@PathVariable int input) {
     return this.reactiveMathService.multiplicationTable(input);
   }
+
+  @PostMapping(value = "/square")
+  public Mono<Response> multiply(@RequestBody Mono<MultiplyRequestDto> dtoRequest) {
+    return this.reactiveMathService.multiply(dtoRequest);
+  }
+
+
 }

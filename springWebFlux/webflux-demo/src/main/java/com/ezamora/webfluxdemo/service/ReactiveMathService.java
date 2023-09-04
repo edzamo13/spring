@@ -1,5 +1,6 @@
 package com.ezamora.webfluxdemo.service;
 
+import com.ezamora.webfluxdemo.dto.MultiplyRequestDto;
 import com.ezamora.webfluxdemo.dto.Response;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -10,17 +11,41 @@ public class ReactiveMathService {
 
 
   public Mono<Response> findSquare(int input) {
-    return Mono.fromSupplier(() -> {
-          System.out.println("input: " + input);
-          return input * input;
-        })
+    return Mono.fromSupplier(() ->
+            input * input
+        )
         .map(Response::new);
   }
 
+  //This is a reactive Code
   public Flux<Response> multiplicationTable(int input) {
     return Flux.range(1, 10)
         .doOnNext(i -> SleepUtil.sleepSeconds(1))
         .doOnNext(i -> System.out.println("reactive-math-service processing :" + i))
         .map(m -> new Response(input * input));
   }
+
+  /* Example code no reactive because the whole business of logic, no is including for this reason no executing in the pipeline
+  The things will no stop because the all the operation is getting executed outside the pipeline
+
+
+  /*
+  public Flux<Response> multiplicationTable(int input) {
+    List<Response> list = IntStream.rangeClosed(1, 10)
+        .mapToObj(value -> new Response(value * input))
+        .collect(Collectors.toList());
+    return Flux.fromIterable(list);
+  }
+
+  */
+
+
+  public Mono<Response> multiply(Mono<MultiplyRequestDto> dtoMOno) {
+    return dtoMOno
+        .doOnNext(d -> System.out.println("dto!..:" + d))
+        .map(dto -> dto.getFirst() * dto.getSecond())
+        .map(Response::new);
+
+  }
+
 }
