@@ -3,6 +3,7 @@ package com.ezamora.webfluxdemo.config;
 import com.ezamora.webfluxdemo.dto.MultiplyRequestDto;
 import com.ezamora.webfluxdemo.dto.Response;
 import com.ezamora.webfluxdemo.exception.InputValidationException;
+import com.ezamora.webfluxdemo.exceptionhandler.InputValidationHandler;
 import com.ezamora.webfluxdemo.service.ReactiveMathService;
 import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -58,11 +59,18 @@ public class RequestHandler {
   }
 
   public Mono<ServerResponse> operationFunctional(ServerRequest serverRequest) {
-    int inputA = Integer.parseInt(serverRequest.pathVariable("a"));
-    int inputB = Integer.parseInt(serverRequest.pathVariable("b"));
-    String operation = serverRequest.headers().firstHeader("operation");
-    return this.reactiveMathService.operationsHandler(inputA, inputB,
-        Objects.requireNonNull(operation));
+    try {
+      int inputA = Integer.parseInt(serverRequest.pathVariable("a"));
+      int inputB = Integer.parseInt(serverRequest.pathVariable("b"));
+      String operation = serverRequest.headers().firstHeader("operation");
+      System.out.println("operation" + operation);
+      return this.reactiveMathService.operationsHandler(inputA, inputB, operation);
+    } catch (Exception e) {
+      return ServerResponse.badRequest()
+          .bodyValue("You need a 'operation' in header  +,-,*,/ ");
+    }
+
+
   }
 
 

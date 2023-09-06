@@ -56,7 +56,7 @@ public class ReactiveMathService {
       case "-" -> getServerResponse(inputA - inputB);
       case "*" -> getServerResponse(inputA * inputB);
       case "/" -> getServerResponse(inputA / inputB);
-      default -> null;
+      default -> ServerResponse.badRequest().bodyValue("operation should be +,-,*,/");
     };
   }
 

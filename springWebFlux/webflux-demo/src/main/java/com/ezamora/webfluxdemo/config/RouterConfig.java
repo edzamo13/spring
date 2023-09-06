@@ -57,4 +57,5 @@ public class RouterConfig {
       return ServerResponse.ok().bodyValue(response);
     };
   }
+
 }
