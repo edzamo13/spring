@@ -3,6 +3,7 @@ package com.ezamora.webfluxdemo.service;
 import com.ezamora.webfluxdemo.dto.MultiplyRequestDto;
 import com.ezamora.webfluxdemo.dto.Response;
 import org.springframework.stereotype.Service;
+import org.springframework.web.reactive.function.server.ServerResponse;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -46,6 +47,23 @@ public class ReactiveMathService {
         .map(dto -> dto.getFirst() * dto.getSecond())
         .map(Response::new);
 
+  }
+
+
+  public Mono<ServerResponse> operationsHandler(int inputA, int inputB, String operation) {
+    return switch (operation) {
+      case "+" -> getServerResponse(inputA + inputB);
+      case "-" -> getServerResponse(inputA - inputB);
+      case "*" -> getServerResponse(inputA * inputB);
+      case "/" -> getServerResponse(inputA / inputB);
+      default -> null;
+    };
+  }
+
+  private static Mono<ServerResponse> getServerResponse(int inputA) {
+    return Mono.fromSupplier(
+            () -> ServerResponse.ok().body(Mono.just(new Response(inputA)), Response.class))
+        .flatMap(serverResponseMono -> serverResponseMono);
   }
 
 }

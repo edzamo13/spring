@@ -4,6 +4,7 @@ import com.ezamora.webfluxdemo.dto.MultiplyRequestDto;
 import com.ezamora.webfluxdemo.dto.Response;
 import com.ezamora.webfluxdemo.exception.InputValidationException;
 import com.ezamora.webfluxdemo.service.ReactiveMathService;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -55,4 +56,14 @@ public class RequestHandler {
     Mono<Response> responseMono = this.reactiveMathService.findSquare(input);
     return ServerResponse.ok().body(responseMono, Response.class);
   }
+
+  public Mono<ServerResponse> operationFunctional(ServerRequest serverRequest) {
+    int inputA = Integer.parseInt(serverRequest.pathVariable("a"));
+    int inputB = Integer.parseInt(serverRequest.pathVariable("b"));
+    String operation = serverRequest.headers().firstHeader("operation");
+    return this.reactiveMathService.operationsHandler(inputA, inputB,
+        Objects.requireNonNull(operation));
+  }
+
+
 }
