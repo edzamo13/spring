@@ -3,9 +3,7 @@ package com.ezamora.webfluxdemo.config;
 import com.ezamora.webfluxdemo.dto.MultiplyRequestDto;
 import com.ezamora.webfluxdemo.dto.Response;
 import com.ezamora.webfluxdemo.exception.InputValidationException;
-import com.ezamora.webfluxdemo.exceptionhandler.InputValidationHandler;
 import com.ezamora.webfluxdemo.service.ReactiveMathService;
-import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.stereotype.Service;
@@ -43,6 +41,7 @@ public class RequestHandler {
   public Mono<ServerResponse> multiplyHandler(ServerRequest serverRequest) {
     Mono<MultiplyRequestDto> multiplyRequestDtoMono = serverRequest.bodyToMono(
         MultiplyRequestDto.class);
+    System.out.println("serverRequest.headers()" + serverRequest.headers());
     Mono<Response> responseMono = this.reactiveMathService.multiply(multiplyRequestDtoMono);
     return ServerResponse.ok()
         .contentType(MediaType.TEXT_EVENT_STREAM)

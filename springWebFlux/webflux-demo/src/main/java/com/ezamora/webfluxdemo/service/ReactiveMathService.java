@@ -41,9 +41,9 @@ public class ReactiveMathService {
   */
 
 
-  public Mono<Response> multiply(Mono<MultiplyRequestDto> dtoMOno) {
-    return dtoMOno
-        .doOnNext(d -> System.out.println("dto!..:" + d))
+  public Mono<Response> multiply(Mono<MultiplyRequestDto> dtoMono) {
+    return dtoMono
+        .doOnNext(d -> System.out.println(" multiply dtoMono..:" + d))
         .map(dto -> dto.getFirst() * dto.getSecond())
         .map(Response::new);
 
