@@ -1,6 +1,5 @@
 package com.ezamora.productservice.service;
 
-import com.ezamora.productservice.domain.Product;
 import com.ezamora.productservice.service.dto.ProductDto;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -14,7 +13,5 @@ public interface ProductService {
   public Mono<ProductDto> insertProduct(Mono<ProductDto> productDtoMono);
   public Mono<ProductDto> updateProduct(String id, Mono<ProductDto> productDtoMono);
   public Mono<Void> deleteProduct(String id);
-
-
 
 }

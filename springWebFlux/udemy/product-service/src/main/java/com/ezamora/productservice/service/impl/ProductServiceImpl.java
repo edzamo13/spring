@@ -1,6 +1,6 @@
 package com.ezamora.productservice.service.impl;
 
-import com.ezamora.productservice.repository.impl.ProductRepository;
+import com.ezamora.productservice.repository.ProductRepository;
 import com.ezamora.productservice.service.ProductService;
 import com.ezamora.productservice.service.dto.ProductDto;
 import com.ezamora.productservice.service.mapper.ProductMapper;
