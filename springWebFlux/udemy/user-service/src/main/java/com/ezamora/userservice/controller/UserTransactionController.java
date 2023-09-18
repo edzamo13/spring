@@ -32,8 +32,8 @@ public class UserTransactionController {
   @GetMapping("{id}")
   public Flux<UserTransactionDto> findByUserId(@PathVariable("id") Integer userId) {
     return this.userTransactionService.findByUserId(userId);
-        //.map(ResponseEntity::ok)
-     //   .defaultIfEmpty(ResponseEntity.notFound().build());
+       // .map(ResponseEntity::ok)
+     //.defaultIfEmpty(ResponseEntity.notFound().build());
   }
 
 
