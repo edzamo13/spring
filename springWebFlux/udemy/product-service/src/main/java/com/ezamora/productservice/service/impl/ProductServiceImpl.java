@@ -1,5 +1,6 @@
 package com.ezamora.productservice.service.impl;
 
+import com.ezamora.productservice.configuration.SinkConfig;
 import com.ezamora.productservice.repository.ProductRepository;
 import com.ezamora.productservice.service.ProductService;
 import com.ezamora.productservice.service.dto.ProductDto;
@@ -9,12 +10,14 @@ import org.springframework.data.domain.Range;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+import reactor.core.publisher.Sinks;
 
 @Service
 @RequiredArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
   private final ProductRepository productRepository;
+  private final Sinks.Many<ProductDto> sink;
 
   @Override
   public Flux<ProductDto> getAll() {
@@ -39,7 +42,8 @@ public class ProductServiceImpl implements ProductService {
     return productDtoMono
         .map(ProductMapper.INSTANCE::toProduct)
         .flatMap(this.productRepository::insert)
-        .map(ProductMapper.INSTANCE::toProductDto);
+        .map(ProductMapper.INSTANCE::toProductDto)
+        .doOnNext(this.sink::tryEmitNext);
   }
 
   @Override

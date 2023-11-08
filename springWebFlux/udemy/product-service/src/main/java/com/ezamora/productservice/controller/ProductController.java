@@ -36,7 +36,9 @@ public class ProductController {
 
   @GetMapping("{id}")
   public Mono<ResponseEntity<ProductDto>> getProductById(@PathVariable String id) {
+    System.out.println("product-service  ProductService " + id);
     return this.productService.getProductById(id)
+        .doOnNext(System.out::println)
         .map(ResponseEntity::ok)
         .defaultIfEmpty(ResponseEntity.notFound().build());
   }

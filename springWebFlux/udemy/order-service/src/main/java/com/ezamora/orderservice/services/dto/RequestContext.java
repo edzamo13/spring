@@ -1,8 +1,10 @@
 package com.ezamora.orderservice.services.dto;
 
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 
 @Data
+@RequiredArgsConstructor
 public class RequestContext {
 
   private PurchaseOrderRequestDto purchaseOrderRequestDto;
@@ -13,4 +15,6 @@ public class RequestContext {
   public RequestContext(PurchaseOrderRequestDto purchaseOrderRequestDto) {
     this.purchaseOrderRequestDto = purchaseOrderRequestDto;
   }
+
+
 }
