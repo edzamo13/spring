@@ -1,6 +1,6 @@
 package com.ezamora.productservice.configuration;
 
-import com.ezamora.orderservice.services.dto.ProductDto;
+import com.ezamora.productservice.service.dto.ProductDto;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import reactor.core.publisher.Flux;

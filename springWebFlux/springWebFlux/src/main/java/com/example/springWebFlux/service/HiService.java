@@ -3,15 +3,18 @@ package com.example.springWebFlux.service;
 import com.example.springWebFlux.daos.HiRepository;
 import com.example.springWebFlux.entity.Message;
 import com.example.springWebFlux.entity.Movie;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
 @Service
+@Slf4j
+@RequiredArgsConstructor
 public class HiService {
 
-    @Autowired
-    private HiRepository repository;
+    private final HiRepository repository;
 
     public Flux<String> hola() {
         Flux<String> stringFlux= Flux.concat(repository.hi(),repository.hi());
@@ -19,6 +22,7 @@ public class HiService {
     }
 
     public Flux<Movie> finAllMovies(){
-        return repository.finAllMovies();
+        return repository.finAllMovies()
+            .log();
     }
 }
