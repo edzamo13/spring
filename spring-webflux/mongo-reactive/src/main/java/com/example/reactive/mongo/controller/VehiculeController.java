@@ -2,7 +2,6 @@ package com.example.reactive.mongo.controller;
 
 import com.example.reactive.mongo.model.Vehicle;
 import com.example.reactive.mongo.service.VehiculeService;
-import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
