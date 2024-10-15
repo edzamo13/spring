@@ -1,4 +1,3 @@
 package com.example.kotlin.domain
 
-class Book {
-}
+data class Book(var id: Long?, var title: String, var author: String)

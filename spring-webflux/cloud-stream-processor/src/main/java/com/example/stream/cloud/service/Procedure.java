@@ -1,4 +1,4 @@
-package com.example.stream.cloud.controller;
+package com.example.stream.cloud.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.kafka.core.KafkaTemplate;
